@@ -1,13 +1,10 @@
-# 心得：**此代码可以很好地体现了自己数据的分类，既有自训练模型，也有预训练模型，resnet18和resnet101可以随时换着预训练**
+# 心得：**此代码可以很好地体现残差网络的构建**
 
 ## Dependencies:
 * Windows10
-* python==3.6.10
+* python==3.6.12
 * > GeForce GTX 1660TI
-* pytorch==1.0.0
-* torchvision==0.2.1
-* cuda100
-* numpy==1.19.5
+* tensorflow-gpu==2.0.0
 
 ## Visualization Results
 
@@ -23,33 +20,11 @@
 
 ![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/batch.jpg)
 
-
-
-
-
 ## Public Datasets:
 
-* 五种pokemon
-
-
-
-
-## Emphasize:
-* pokemon图片在“宝可梦数据集.pdf”百度云盘，下载后文件夹解压出来直接运行程序即可，具体位置看“预训练模型放的位置.PNG”
-* train_scratch.py文件是自己训练，train_transfer.py是使用resnet预训练模型
-* transfer所使用的预训练模型可以随时更换，具体看“transfer所使用的预训练模型可以随时更换，具体看本图片.PNG”
+* cifar100
 
 ## Experience：
-### 1.出现下面的错误
-  * 原因一：You're out of memory
-      * reducing your batch size
-      * using a simpler model
-      * using less data
-      * limit TensorFlow GPU memory：  **os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'**-----------------------------------（本代码属于这种）
-  * 原因二：You have incompatible versions of CUDA, TensorFlow, NVIDIA drivers, etc.
-      * you can see [https://blog.csdn.net/qq_41683065/article/details/108702408](https://blog.csdn.net/qq_41683065/article/details/108702408)
-    
-    
 ```
 Traceback (most recent call last):
   File "resnet18_train.py", line 89, in <module>
@@ -85,6 +60,29 @@ Traceback (most recent call last):
   File "<string>", line 3, in raise_from
 tensorflow.python.framework.errors_impl.UnknownError: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above. [Op:Conv2D]
 ```
+### 1.出现上面的错误
+  * 原因一：You're out of memory
+      * reducing your batch size
+      * using a simpler model
+      * using less data
+      * limit TensorFlow GPU memory（本代码按此方法解决）： [https://stackoverflow.com/questions/53698035/failed-to-get-convolution-algorithm-this-is-probably-because-cudnn-failed-to-in](https://stackoverflow.com/questions/53698035/failed-to-get-convolution-algorithm-this-is-probably-because-cudnn-failed-to-in)(参考此网址)
+          
+```
+      os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'**-----------------------------------（本代码按此方法解决）
+       
+      or
+      
+      physical_devices = tf.config.experimental.list_physical_devices('GPU')
+      if len(physical_devices) > 0:
+      tf.config.experimental.set_memory_growth(physical_devices[0], True)
+```   
+  * 原因二：You have incompatible versions of CUDA, TensorFlow, NVIDIA drivers, etc.
+      * you can see [https://blog.csdn.net/qq_41683065/article/details/108702408](https://blog.csdn.net/qq_41683065/article/details/108702408)
+        **my cudnn==7.6.4 cuda10.0_0  cudatoolkit==10.0.130**
+        
+ ### 2.tensorflow-gpu版本代码出现numpy错误
+  * 其中一种解决方法：**pip install --upgrade numpy**
+  
 
 ## References:
 * 深度学习与TensorFlow 2入门实战（完整版）---龙曲良
