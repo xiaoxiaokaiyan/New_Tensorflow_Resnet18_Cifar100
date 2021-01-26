@@ -1,6 +1,9 @@
 # 心得：**此代码可以很好地体现残差网络的构建**
 
+
+
 ## The complexity and accuracy of the neural network model
+![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_Resnet18_cifar100/blob/main/complexity%20and%20accuracy.png)
 
 
 ## Dependencies:
@@ -9,22 +12,20 @@
 * > GeForce GTX 1660TI
 * tensorflow-gpu==2.0.0
 
+
+
 ## Visualization Results
-![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/batch.jpg)
-
-* resnet101 训练结果 1
-
+* resnet18 训练结果 1
 ![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_Resnet18_cifar100/blob/main/result_1.PNG)
-
 * resnet101 训练结果 2
-
 ![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_Resnet18_cifar100/blob/main/result_2.PNG)
 
 
 
 ## Public Datasets:
-
 * cifar100
+
+
 
 ## Experience：
 ```
@@ -62,7 +63,7 @@ Traceback (most recent call last):
   File "<string>", line 3, in raise_from
 tensorflow.python.framework.errors_impl.UnknownError: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above. [Op:Conv2D]
 ```
-### 1.出现上面的错误
+### 出现上面的错误
   * 原因一：You're out of memory
       * reducing your batch size
       * using a simpler model
@@ -82,8 +83,9 @@ tensorflow.python.framework.errors_impl.UnknownError: Failed to get convolution 
       * you can see [https://blog.csdn.net/qq_41683065/article/details/108702408](https://blog.csdn.net/qq_41683065/article/details/108702408)
         **my cudnn==7.6.4 cuda10.0_0  cudatoolkit==10.0.130**
         
- ### 2.tensorflow-gpu版本代码出现numpy错误
+ ### tensorflow-gpu版本代码出现numpy错误
   * 其中一种解决方法：**pip install --upgrade numpy**
+  
   
 
 ## References:
