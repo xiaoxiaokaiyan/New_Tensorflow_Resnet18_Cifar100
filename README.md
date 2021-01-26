@@ -45,9 +45,9 @@
       * reducing your batch size
       * using a simpler model
       * using less data
-      * limit TensorFlow GPU memory：  <h3>os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'</h5>
-    
-    
+      * limit TensorFlow GPU memory：  **os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'**-----------------------------------（本代码属于这种）
+  * 原因二：You have incompatible versions of CUDA, TensorFlow, NVIDIA drivers, etc.
+      * you can see [https://blog.csdn.net/qq_41683065/article/details/108702408](https://blog.csdn.net/qq_41683065/article/details/108702408)
     
     
 ```
