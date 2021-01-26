@@ -1,5 +1,8 @@
 # 心得：**此代码可以很好地体现残差网络的构建**
 
+## The complexity and accuracy of the neural network model
+
+
 ## Dependencies:
 * Windows10
 * python==3.6.12
@@ -7,18 +10,17 @@
 * tensorflow-gpu==2.0.0
 
 ## Visualization Results
+![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/batch.jpg)
 
 * resnet101 训练结果 1
 
-![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/resnet101%20test.PNG)
+![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_Resnet18_cifar100/blob/main/result_1.PNG)
 
 * resnet101 训练结果 2
 
-![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/resnet101%20test%20loss%20and%20acc.PNG)
+![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_Resnet18_cifar100/blob/main/result_2.PNG)
 
-* resnet101 训练结果 3
 
-![img1](https://github.com/xiaoxiaokaiyan/Protch_Transfer_learning_Pokmon/blob/main/batch.jpg)
 
 ## Public Datasets:
 
