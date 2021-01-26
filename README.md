@@ -6,12 +6,23 @@
 ![img1](https://github.com/xiaoxiaokaiyan/New_Tensorflow_Resnet18_cifar100/blob/main/complexity%20and%20accuracy.png)
 
 
+
 ## Dependencies:
 * Windows10
 * python==3.6.12
 * > GeForce GTX 1660TI
 * tensorflow-gpu==2.0.0
-
+* GPU环境安装包，下载地址：https://pan.baidu.com/s/14Oisbo9cZpP7INQ6T-3vwA 提取码：z4pl （网上找的）
+```
+  Anaconda3-5.2.0-Windows-x86_64.exe
+  cuda_10.0.130_411.31_win10.exe
+  cudnn-10.0-windows10-x64-v7.4.2.24.zip
+  h5py-2.8.0rc1-cp36-cp36m-win_amd64.whl
+  numpy-1.16.4-cp36-cp36m-win_amd64.whl
+  tensorflow_gpu-1.13.1-cp36-cp36m-win_amd64.whl
+  torch-1.1.0-cp36-cp36m-win_amd64.whl
+  torchvision-0.3.0-cp36-cp36m-win_amd64.whl
+```
 
 
 ## Visualization Results
